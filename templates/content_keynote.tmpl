@@ -1,0 +1,151 @@
+<div class="content-container">
+	<div class="jumbotron">
+		<h1>
+			Keynote Speakers<br />
+			<small>North East Database Day 2025 </small><br />
+			<small>Thursday January 9th, 2025</small><br />
+			<small><a href="https://www.brandeis.edu/computer-science/" target="_blank">Michtom School of Computer
+					Science</a> @ Brandeis University</small>
+		</h1>
+		<p>
+	</div>
+
+	<div class="page-content">
+		<h2>1) DBOS: A Database-oriented Operating System<br>
+			<p><a href="https://www.csail.mit.edu/person/michael-stonebraker" target="_blank">Michael Stonebraker</a>
+				&nbsp; <small>MIT</small></p>
+		</h2>
+		<h3>Abstract</h3>
+		<p>
+			There are three major developments that indicate the traditional way of building data-oriented applications
+			can be improved substantially. First, the aggressive movement of applications to the cloud is being done by
+			all enterprises who can. Pricing by the cloud vendors dramatically favors a workflow paradigm, not the
+			traditional client-server model. Second, domain-specific languages, long popular for business data
+			processing applications, must be changed to work well for a workflow paradigm. This presents an opportunity
+			for new domain specific languages (DSPs). Lastly, the scale requirements of web applications is putting
+			extreme stress on Linux, again leading to the desirability of a new system software stack. This paper shows
+			how the traditional development paradigm can be improved for data-oriented applications by leveraging these
+			new features, thereby obtaining significantly reduced development time and cloud costs, simpler
+			administration and better security.
+		</p>
+		<h3>Bio</h3>
+		<p style="float: left;"> <img src="./images/stonebraker.jpg" height="auto" width="120px" border="1px"> </p>
+		<p>
+			Dr. Stonebraker has been a pioneer of data base research and technology for more than forty years. He was
+			the main architect of the INGRES relational DBMS, and the object-relational DBMS, POSTGRES. These prototypes
+			were developed at the University of California at Berkeley where Stonebraker was a Professor of Computer
+			Science for twenty-five years. More recently at M.I.T. he was the co-architect of the C-Store column-
+			oriented DBMS, the H-Store transaction processing engine, the Data Tamer data integration system, the SciDB
+			array processing engine, the Kyrix visualization system and the operating system DBOS. He is the founder of
+			ten venture-capital backed startups which have commercialized his prototypes.
+			Professor Stonebraker is the author of scores of research papers on data base technology, operating systems
+			and the architecture of system software services. He was awarded the ACM System Software Award in 1992, for
+			his work on INGRES. Additionally, he was awarded the first annual Innovation award by the ACM SIGMOD special
+			interest group in 1994 and was elected to the National Academy of Engineering in 1997. He was awarded the
+			IEEE John Von Neumann award in 2005, and the ACM Turing Award in 2014. Presently he is an Adjunct Professor
+			of Computer Science at M.I.T., where he is working on a variety of future-generation data-oriented projects.
+		</p>
+		<h3>Projects</h3>
+		<ol>
+			<li><a href="https://www.csail.mit.edu/research/data-discovery" target="_blank">Data Discovery</a></li>
+			<li><a href="https://www.csail.mit.edu/research/building-scalable-database-autonomous-vehicles"
+					target="_blank">Building a Scalable Database for Autonomous Vehicles</a></li>
+			<li><a href="https://www.csail.mit.edu/research/predictive-elastic-database-systems"
+					target="_blank">Predictive Elastic Database Systems</a></li>
+		</ol>
+		<h3>Links</h3>
+		<ol>
+			<li><a href="https://www.csail.mit.edu/person/michael-stonebraker" target="_blank">Website</a></li>
+			<!--<li>Twitter: <a href="https://twitter.com/ImmanuelTrummer" target="_blank">@ImmanuelTrummer</a></li>-->
+		</ol>
+	</div>
+	<br />
+
+	<div class="page-content">
+		<h2>2) Databases in the Age of AI: Architecting for Model-Training, Fine-Tuning and Inference
+			<p><a href="https://www.borthakur.com/dhruba_borthakur" target="_blank">Dhruba Borthakur</a> &nbsp;
+				<small>Open AI</small>
+			</p>
+		</h2>
+		<h3>Abstract</h3>
+		<p>
+			In this talk, Dhruba describes the rapidfire evolution of AI’s relationship with databases: starting with
+			Retrieval Augmented Generation (RAG) techniques and then moving onto fine-tuning and more recently to
+			model-tool-invocations at inference time. This talk describes how a database is used in Training,
+			Fine-tuning and Agentic-Tool calling. Reasoning models have arrived and these models stop, think and then
+			act. The thinking process is not just computation but also a lot of data processing. What can databases do
+			to make this thinking process efficient?
+
+			RAG applications need retrieval features including Vector Search, BM25 and text search. Dhruba describes how
+			these are implemented in Rockset, one of the first databases to scale retrieval on petabayte size datasets.
+			He talks about the Converged Indexing mechanism that builds indices using the open source RocksDB storage
+			engine. He describes Rockset’s vector Search & hybrid search implementation at scale.
+
+			Most AI models are running 24x7, which means that new data to a database never stops and queries never stop.
+			Dhruba lays out the design of the Aggregator-Leaf-Tailer (ALT) architecture that does a three-way
+			disaggregation of read-compute, write-compute and storage. He describes how Rockset uses the ALT
+			architecture to rebuild retrieval indices online without impacting query latencies.
+
+			With the advent of a model’s ability to invoke tools via function-calling, database query volumes are
+			predicted to move even higher. A reasoning model accesses the database multiple times at inference time.
+			This is a high-qps & low-latency retrieval queries; Dhruba describes how Rockset’s scatter-gather query
+			engine is primarily optimized for low latency compared to other databases that optimize for query
+			throughput. He describes Rockset’s Leader-Follower approach to scaling queries to thousands of qps.
+
+			Dhruba concludes the talk by describing a few examples of how Rockset can power AI use-cases like
+			multi-modal-file-uploads, conversation-search and model distillation.
+		</p>
+		<h3>Bio</h3>
+		<p style="float: left;"> <img src="./images/dhruba.jpg" height="auto" width="120px" border="1px"> </p>
+		<p>
+			Dhruba Borthakur is the Technical Lead of the data infrastructure team at OpenAI. He co-founded Rockset, a
+			search database that powers AI applications at OpenAI. Dhruba was the founding engineer of the RocksDB
+			database at Facebook and one of the founding engineers of the Hadoop File System at Yahoo. Dhruba was also
+			an early contributor to the open source Apache HBase project. Previously, he was a senior engineer at
+			Veritas Software, where he was part of a team responsible for the development of VxFS and Veritas
+			SanPointDirect storage system; was the cofounder of Oreceipt.com, an ecommerce startup based in Sunnyvale;
+			and was a senior engineer at IBM-Transarc Labs, where he contributed to the development of Andrew File
+			System (AFS). Dhruba holds an MS in computer science from the University of Wisconsin-Madison and a BS in
+			computer science BITS, Pilani, India. He has 69 issued patents.
+		</p>
+		<h3>Links</h3>
+		<ol>
+			<li><a href="https://www.linkedin.com/in/dhruba/" target="_blank">LinkedIn</a></li>
+			<li>Twitter: <a href="https://twitter.com/dhruba_rocks" target="_blank">@dhruba_rocks</a></li>
+		</ol>
+	</div>
+	<br />
+
+	<div class="page-content">
+		<h2>3) Patterns and Principles of Serverless Data Systems
+			<p><a href="https://www.datastax.com/our-people/jake-luciani" target="_blank">Jake Luciani</a> &nbsp;
+				<small>DataStax</small>
+			</p>
+		</h2>
+		<h3>Abstract</h3>
+		<p>
+			Serverless architectures are reshaping data systems by delivering new standards of scalability, efficiency,
+			and simplicity. Drawing on production insights from running Astra Serverless DB at scale, this keynote
+			identifies the core principles that underpin the design and management of most serverless data platforms.
+			These principles enable adaptable solutions that support diverse data formats, indexing strategies, and
+			analytical approaches while minimizing complexity. Ultimately, this talk provides both conceptual clarity
+			and practical guidance for those seeking to build next-generation, serverless DBAAS and PAAS systems for
+			thousands of developers across all cloud platforms.
+		</p>
+		<h3>Bio</h3>
+		<p style="float: left;"> <img src="./images/jake.jpg" height="auto" width="120px" border="1px">
+		</p>
+		<p>
+			Jake serves as Chief Architect at DataStax where he led the creation of Astra Serverless DB and DataStax
+			Enterprise. He has over 20 years of experience in the areas of distributed systems, finance, and
+			manufacturing. He is a member of the Apache Foundation and is on the project committee of the Apache
+			Cassandra, Apache Arrow, and Apache Thrift projects. Jake received his B.S. in Computer Science from Lehigh
+			University along with a minor in Cognitive Science.
+		</p>
+		<h3>Links</h3>
+		<ol>
+			<li><a href="https://www.linkedin.com/in/tjake/" target="_blank">LinkedIn</a></li>
+			<li>Twitter: <a href="https://twitter.com/tjake" target="_blank">@tjake</a></li>
+		</ol>
+	</div>
+</div>

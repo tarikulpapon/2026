@@ -1,0 +1,820 @@
+<div id="program" class="content-container">
+  <div class="jumbotron">
+    <h1>
+      Program<br />
+      <small>North East Database Day 2025 </small><br />
+      <small>Thursday January 9th, 2025</small><br />
+      <small><a href="https://www.brandeis.edu/computer-science/" target="_blank">Michtom School of Computer Science</a>
+        @ Brandeis University</small>
+    </h1>
+  </div>
+  <h2>Special thanks to this year’s sponsors:</h2>
+  <p style="text-align: center;">
+    <a href="https://www.brandeis.edu/computer-science/" target="_blank"><img
+        src="images/logos/brandeis-computer-science.jpg" style="height: 100%; max-height: 95px; width: auto;" /></a>
+    &nbsp; &nbsp;
+    <a href="https://www.microsoft.com/" target="_blank"><img src="images/logos/MSFT.png"
+        style="height: 100%; max-height: 95px; width: auto;" /></a> &nbsp; &nbsp;
+    <a href="https://www.datastax.com/" target="_blank"><img src="images/logos/datastax.jpg"
+        style="height: 100%; max-height: 95px; width: auto;" /></a> &nbsp; &nbsp;
+    <a href="https://www.cockroachlabs.com/" target="_blank"><img src="images/logos/cockroach-labs.png"
+        style="height: 100%; max-height: 95px; width: auto;" /></a> &nbsp; &nbsp;
+  </p>
+
+
+
+  <p style="text-align: center;">
+    <a href="javascript: toggleVisibility ('showall')">Show</a>/<a href="javascript: toggleVisibility ('hideall')">Hide
+      all abstracts</a>
+  </p>
+
+
+  <table class="table table-bordered table-hover table-condensed programTable">
+    <tbody>
+      <tr>
+        <th width="17%">Time</th>
+        <th width="83%">Event</th>
+      </tr>
+      <tr>
+        <td>8:00 - 8:45</td>
+        <td><strong>Registration</strong></td>
+      </tr>
+      <tr>
+        <td>8:45 - 9:00</td>
+        <td><strong>Welcome and Acknowledgments  <a href="download/slides/NEDB2025.pdf"
+          target="_blank">[Slides]</a></strong></td>
+      </tr>
+
+      <tr class="success">
+        <td colspan="2" align="center"><strong>Session 1: Query Optimization in Modern Databases</strong><br>Chair: Andy
+          Hyunh (Boston University)
+        </td>
+      </tr>
+
+      <tr>
+        <td>9:00 - 9:30</td>
+        <td>
+          <strong>Keynote 1</strong>: Jake Luciani (DataStax) <br><i>Patterns and Principles of Serverless Data
+            Systems</i>
+          <!-- <a href="download/slides/TileDB_Adaptive_Intelligence_StavrosPapadopoulos.pdf" target="_blank">[Slides]</a> -->
+          <br>
+          <a href="javascript: toggleVisibility ('#keynote1A')">Click to toggle abstract and bio.</a>
+          <div id="keynote1A" class="abstract" style="display: none;">
+            <h3>Abstract</h3>
+            <p>
+              Serverless architectures are reshaping data systems by delivering new standards of scalability,
+              efficiency,
+              and simplicity. Drawing on production insights from running Astra Serverless DB at scale, this keynote
+              identifies the core principles that underpin the design and management of most serverless data platforms.
+              These principles enable adaptable solutions that support diverse data formats, indexing strategies, and
+              analytical approaches while minimizing complexity. Ultimately, this talk provides both conceptual clarity
+              and practical guidance for those seeking to build next-generation, serverless DBAAS and PAAS systems for
+              thousands of developers across all cloud platforms.
+            </p>
+            <h3>Bio</h3>
+            <p>
+              Jake serves as Chief Architect at DataStax where he led the creation of Astra Serverless DB and DataStax
+              Enterprise. He has over 20 years of experience in the areas of distributed systems, finance, and
+              manufacturing. He is a member of the Apache Foundation and is on the project committee of the Apache
+              Cassandra, Apache Arrow, and Apache Thrift projects. Jake received his B.S. in Computer Science from
+              Lehigh
+              University along with a minor in Cognitive Science.
+            </p>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>9:30 - 9:45</td>
+
+        <td>
+          <i>Approximating Top-K Queries with Opaque UDFs</i>
+          <!-- <a href="download/slides/Virtualizing_Cloud_Data_Infrastructures_with_BRAD_GeoffreyXYu.pdf"
+            target="_blank">[Slides]</a>
+          <a href="download/posters/Virtualizing_Cloud_Data_Infrastructures_with_BRAD.pdf" target="_blank">[Poster]</a> -->
+          <br>
+          Fatemeh Nargesian (University of Rochester)*; Jiwon Chang (University of Rochester)
+          <br>
+          <a href="javascript: toggleVisibility ('#pa1A')">Click to toggle abstract.</a>
+          <div id="pa1A" class="abstract" style="display: none;">
+            <p>
+              Intermixing opaque user defined functions (UDF) with query answering has become an important workload
+              forperforming data science on unstructured text, images, and tabular data . An opaque UDF is a
+              black-box function whose semantics and internal structurenor its scores on the database are available a
+              priori. These UDFs are typically written in conventional programming languages, andincreasingly involve
+              machine learning models . They are invoked in stand-alone code bases or
+              intermixed with SQLqueries . Recently, He et al. studied opaque filter queries –
+              queries that invoke UDFs for selecting database elements and may even limit the result size as users
+              navigate massive databases . For example, a web content creator might be interested infiltering
+              reviews with a positive sentiment from a product database crawled from the Web. Or, for debugging
+              purposes, a
+              driving car engineer may need to retrieve 100 images capturing pedestrians from a large video
+              database. Opaque Top-𝑘 Queries Unlike opaque filter queries filter the result set according to the UDF’s
+              boolean answers, opaque top-𝑘 queries constitute ranking elements in a database by a scoring function,
+              that is written as an opaque UDF, and returning the 𝑘 highest scoring elements. For example, an analyst
+              may
+              want to retrieve 100 current vehicle listings that have the highest predicted valuations by applying a
+              price
+              prediction ML model on a database of listings.
+              <br>
+              SELECT* FROM vehicleListings ORDER BY ValuationUDF(listing) LIMIT 100;
+              <br>
+              Traditional top-𝑘 query answering literature generally assumes certain properties on scoring functions
+              . For example, the family of Threshold Algorithm (TA) variants typically assume that the scoring
+              function is a monotone aggregate . Another class of scoring functions is similarity
+              functions, such as inner product . Arbitrary UDFs, however, pose fundamental challenges to top-𝑘
+              query evaluation. First, they may be difficult to analyze, as they involve imperative programming
+              languages and ML models. Existing methods increase programmer burden or limit the scope in order
+              to expose the internals of the UDF to the compiler. Second, they may be expensive to run—foundation models
+              are the extreme case . Hence, an exhaustive scan is not attractive. Third, the scores given by the
+              function may change over time, if the scoring function is a continually learning model or if the score
+              depends on some external factor, like a user-specified label. As such, it is hard to build a sorted index
+              over the elements’ scores or apply the existing approximate nearest neighbor search techniques .
+              Conventional data engines such as Spark or PostgreSQL treat UDFs as a black box, and will execute the UDF
+              exhaustively on all data points . This is not viable when the search domain is very large, each
+              invocation of the model is costly, or the user does not necessarily need the exact top-𝑘 solution. Taking
+              a sample of the search domain is a viable option, but degrades in quality quickly when only a small subset
+              of the elements have high scores. Uniform sampling, in the worst case, requires a sample size of 𝑛(1−𝜀),
+              where 𝑛 is the number of data points and 𝜀 is approximation tolerance. Nearest-neighbor style similarity
+              search is specialized for a subset of functions, like similarity functions.
+              Recently, a body of work studied how to statistically optimize opaque UDF queries. However, existing
+              methods are limited to other types of queries, such as feature engineering , selection queries ,
+              aggregation queries , and queries with partially obscured predicates . To the best of our
+              knowledge, no prior work studied statistical optimization for opaque top-𝑘 queries. A method for
+              approximate opaque top-𝑘 query execution has to balance conflicting objectives. It should be applicable
+              across a wide variety of opaque scoring functions. It should not incur significant execution-time overhead
+              in the worst-case scenario where there is no room for statistical optimization. It should be amenable to
+              batched execution to maximize lower-level optimization opportunities. Finally, ts performance-over-time
+              curve should be close to optimal, and consistently better than random sampling. Solution Sketch Our
+              proposed solution, as illustrated in Figure 1, consists of a tree index and a novel bandit algorithm. The
+              tree index hierarchically clusters data at preprocessing time before any opaque top-𝑘 queries. Each leaf
+              cluster allows for efficient random sampling during query execution. The bandit algorithm statistically
+              optimizes the number of UDF function calls by learning the distribution of scores over the index. We adopt
+              the VOODOO index from . This index vectorizes each element using a cheap heuristic, applies 𝑘-means
+              clustering to the vectors, and then performs agglomerative clustering on the cluster centroids.
+              Our main technical contribution is the query execution algorithm. We abstract the problem of sampling over
+              a collection of heterogeneous clusters for top-𝑘queries as a stochastic DR-submodular bandit problem [2,
+              20]. In this problem setting, there are three classes of algorithms: offline, non-adaptive, and adaptive.
+              The optimal offline algorithm is the theoretical best-case scan when the insertion order of the data is
+              ideal. Adaptive algorithms change their behavior based on the realizations of the random samples;
+              non-adaptive algorithms do not. Prior work established gaps between the three classes . We design
+              an algorithm that performs close to the optimal adaptive, as illustrated in Figure 2.
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>9:45 - 10:00</td>
+        <td>
+          <i>NOCAP: Near-Optimal Correlation-Aware Partitioning Joins</i>
+          <!-- <a href="download/slides/Towards_Adaptive_Transaction_Processing_in_Untrusted_Environments_MohammadJavadAmiri.pdf"
+            target="_blank">[Slides]</a> -->
+          <br>
+          Zichen Zhu (Boston University)*; Xiao Hu (University of Waterloo); Manos Athanassoulis (Boston University)
+          <br>
+          <a href="javascript: toggleVisibility ('#pa1C')">Click to toggle abstract.</a>
+          <div id="pa1C" class="abstract" style="display: none;">
+            <p>
+              Storage-based joins are still commonly used today because the memory budget does not always scale with the
+              data size. One of the many join algorithms developed that has been widely deployed and proven to be
+              efficient is the Hybrid Hash Join (HHJ), which is designed to exploit any available memory to maximize the
+              data that is joined directly in memory. However, HHJ cannot fully exploit detailed knowledge of the join
+              attribute correlation distribution.
+
+              In this paper, we show that given a correlation skew in the join attributes, HHJ partitions data in a
+              suboptimal way. To do that, we derive the optimal partitioning using a new cost-based analysis of
+              partitioning-based joins that is tailored for primary key - foreign key (PK-FK) joins, one of the most
+              common join types.
+              This optimal partitioning strategy has a high memory cost, thus, we further derive an approximate
+              algorithm that has tunable memory cost and leads to near-optimal results. Our algorithm, termed NOCAP
+              (Near-Optimal Correlation-Aware Partitioning) join, outperforms the state-of-the-art for skewed
+              correlations by up to 30 %, and the textbook Grace Hash Join by up to 4 times. Further, for a limited
+              memory budget, NOCAP outperforms HHJ by up to 10 %, even for uniform correlation. Overall, NOCAP
+              dominates state-of-the-art algorithms and mimics the best algorithm for a memory budget varying from below
+              sqrt(||relation||) to more than ||relation||.
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>10:00 - 10:15</td>
+        <td>
+          <i>Practical Adaptive Range Filters</i>
+          <!-- <a href="download/slides/Self-Organizing_Data_Containers_SivaprasadSudhir.pdf" target="_blank">[Slides]</a>
+          <a href="download/posters/Self-Organizing_Data_Containers.pdf" target="_blank">[Poster]</a> -->
+          <br>
+          Yuvaraj Chesetti (Northeastern University)*
+          <br>
+          <a href="javascript: toggleVisibility ('#pa1D')">Click to toggle abstract.</a>
+          <div id="pa1D" class="abstract" style="display: none;">
+            <p>
+              This talk will present ongoing research work to build in-memory filters for range queries that learn and
+              adapt to false positive queries. The talk will give an overview of the problem statement, the challenges
+              faced in supporting adaptivity in prior work on range filters, our proposed solution, and preliminary
+              results.
+            </p>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+
+      <tr>
+        <td>10:15 - 10:45</td>
+        <td><strong>Coffee Break</strong></td>
+      </tr>
+
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+
+
+      <tr class="success">
+        <td colspan="2" align="center"><strong>Session 2: AI for Systems & Systems for AI</strong><br>Chair: Prashant
+          Pandey (Northeastern University)</td>
+      </tr>
+
+      <tr>
+        <td>10:45 - 11:15</td>
+        <td>
+          <strong>Keynote 2</strong>: Dhruba Borthakur (OpenAI)<br>
+          <i>Databases in the Age of AI: Architecting for Model-Training, Fine-Tuning and Inference</i>
+          <a href="download/slides/DatabasesAndAIDhrubaBorthakur.pdf"
+            target="_blank">[Slides]</a>
+          <br>
+          <a href="javascript: toggleVisibility ('#keynote1B')">Click to toggle abstract and bio.</a>
+          <div id="keynote1B" class="abstract" style="display: none;">
+            <h3>Abstract</h3>
+            <p>
+              In this talk, Dhruba describes the rapidfire evolution of AI’s relationship with databases: starting with
+              Retrieval Augmented Generation (RAG) techniques and then moving onto fine-tuning and more recently to
+              model-tool-invocations at inference time. This talk describes how a database is used in Training,
+              Fine-tuning and Agentic-Tool calling. Reasoning models have arrived and these models stop, think and then
+              act. The thinking process is not just computation but also a lot of data processing. What can databases do
+              to make this thinking process efficient?
+
+              RAG applications need retrieval features including Vector Search, BM25 and text search. Dhruba describes
+              how
+              these are implemented in Rockset, one of the first databases to scale retrieval on petabayte size
+              datasets.
+              He talks about the Converged Indexing mechanism that builds indices using the open source RocksDB storage
+              engine. He describes Rockset’s vector Search & hybrid search implementation at scale.
+
+              Most AI models are running 24x7, which means that new data to a database never stops and queries never
+              stop.
+              Dhruba lays out the design of the Aggregator-Leaf-Tailer (ALT) architecture that does a three-way
+              disaggregation of read-compute, write-compute and storage. He describes how Rockset uses the ALT
+              architecture to rebuild retrieval indices online without impacting query latencies.
+
+              With the advent of a model’s ability to invoke tools via function-calling, database query volumes are
+              predicted to move even higher. A reasoning model accesses the database multiple times at inference time.
+              This is a high-qps & low-latency retrieval queries; Dhruba describes how Rockset’s scatter-gather query
+              engine is primarily optimized for low latency compared to other databases that optimize for query
+              throughput. He describes Rockset’s Leader-Follower approach to scaling queries to thousands of qps.
+
+              Dhruba concludes the talk by describing a few examples of how Rockset can power AI use-cases like
+              multi-modal-file-uploads, conversation-search and model distillation.
+
+            </p>
+            <h3>Bio</h3>
+            <p>
+              Dhruba Borthakur is the Technical Lead of the data infrastructure team at OpenAI. He co-founded Rockset, a
+              search database that powers AI applications at OpenAI. Dhruba was the founding engineer of the RocksDB
+              database at Facebook and one of the founding engineers of the Hadoop File System at Yahoo. Dhruba was also
+              an early contributor to the open source Apache HBase project. Previously, he was a senior engineer at
+              Veritas Software, where he was part of a team responsible for the development of VxFS and Veritas
+              SanPointDirect storage system; was the cofounder of Oreceipt.com, an ecommerce startup based in Sunnyvale;
+              and was a senior engineer at IBM-Transarc Labs, where he contributed to the development of Andrew File
+              System (AFS). Dhruba holds an MS in computer science from the University of Wisconsin-Madison and a BS in
+              computer science BITS, Pilani, India. He has 69 issued patents.
+            </p>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>11:15 - 11:30</td>
+        <td>
+          <i>μ-TWO: 3× Faster Multi-Model Training with Orchestration and Memory Optimization</i>
+          <!-- <a href="download/slides/CAVE_Concurrency-Aware_Graph_Processing_System_for_SSD_MdTarikulIslamPapon.pdf"
+            target="_blank">[Slides]</a> <a
+            href="download/posters/CAVE_Concurrency-Aware_Graph_Processing_System_for_SSD.pdf"
+            target="_blank">[Poster]</a> -->
+          <br>
+          Sanket Purandare (Harvard University)*; Stratos Idreos (Harvard University)
+          <br>
+          <a href="javascript: toggleVisibility ('#pa2C')">Click to toggle abstract.</a>
+          <div id="pa2C" class="abstract" style="display: none;">
+            <p>
+              In this paper, we identify that modern GPUs – the key platform for developing neural networks – are being
+              severely underutilized, with ~50% utilization, which further drops as GPUs get faster. We show that
+              state-of-the-art training techniques that employ operator fusion and larger mini-batch sizes to improve
+              GPU utilization are limited by memory and do not scale with the size and number of models. Additionally,
+              we show that using state-of-the-art data swapping techniques (between GPU and host memory) to address GPU
+              memory limitations leads to massive computation stalls as network sizes grow.
+
+              We introduce **μ-two**, a novel compiler that maximizes GPU utilization. At the core of μ-two is an
+              approach that leverages selective data swapping from GPU to host memory only when absolutely necessary and
+              maximally overlaps data movement with independent computation operations such that GPUs never have to wait
+              for data. By collecting accurate run-time statistics and data dependencies, μ-two automatically fuses
+              operators across different models and precisely schedules data movement and computation operations to
+              enable concurrent training of multiple models with minimum stall time.
+
+              We show how to generate μ-two schedules for diverse neural network and GPU architectures and integrate
+              μ-two into the PyTorch framework. Our experiments show that μ-two can achieve up to a **3× speed-up**
+              across a range of network architectures and hardware, spanning vision, natural language processing, and
+              recommendation applications.
+            </p>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>11:30 - 11:45</td>
+        <td>
+          <i>Supporting Vector Search in Relational Databases for Advanced RAGs</i>
+          <!-- <a href="download/slides/Towards_an_Industry-Scale_Feature_Engineering_Benchmark_AbdulWasay.pdf"
+            target="_blank">[Slides]</a> <a
+            href="download/posters/Towards_an_Industry-Scale_Feature_Engineering_Benchmark.pdf"
+            target="_blank">[Poster]</a> -->
+          <br>
+          Jianguo Wang (Purdue University)*
+          <br>
+          <a href="javascript: toggleVisibility ('#pa3B')">Click to toggle abstract.</a>
+          <div id="pa3B" class="abstract" style="display: none;">
+            <p>
+              Vector databases have recently gained significant attention with the emergence of large language models
+              that generate vector embeddings for text. While specialized vector databases are appealing, there is a
+              substantial customer base interested in supporting vector search within relational databases for various
+              reasons, such as reluctance to move data out of relational databases to reduce data silos and costs, the
+              desire to use SQL, and the need for more sophisticated query processing of both vector and non-vector
+              data. In this talk, I will share our experience in integrating vector search within relational databases.
+            </p>
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>11:45 - 12:00</td>
+        <td>
+          <i>VectraFlow: An AI-Augmented Data-Flow System</i>
+          <a href="download/slides/VectraFlow.pdf"
+            target="_blank">[Slides]</a> <a
+            href="download/posters/VectraFlow.pdf"
+            target="_blank">[Poster]</a>
+          <br>
+          Shu Chen (Brown University); Alexander Lee (Brown University)*; Duo Lu (Brown University); Deepti Raghavan
+          (Brown University); Malte Schwarzkopf (Brown University); Ugur Cetintemel (Brown University) <br>
+          <a href="javascript: toggleVisibility ('#pa2E')">Click to toggle abstract.</a>
+          <div id="pa2E" class="abstract" style="display: none;">
+            <p>
+              This talk will provide an overview of VectraFlow, a new data-flow system designed to seamlessly integrate
+              modern ML models with an extended relational framework and advanced semantic operators for unstructured
+              and multi-modal data processing. With its unified execution model, VectraFlow enables both real-time
+              streaming and batch processing, making it a versatile solution for a diverse range of AI-augmented
+              applications. We will describe the core VectraFlow model, highlighting its novel vector-based operators
+              and reliability features. We will also demonstrate use cases from the medical domain to showcase its
+              practical utility. This talk is partly based on our CIDR’25 paper.
+            </p>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>12:00 - 12:15</td>
+        <td>
+          <i>IRIS: Achieving Speed and Usability in an Integrated Vector Database</i>
+          <a href="download/slides/IRIS_Achieving_Speed_and_Usability_in_an_Integrated_Vector_Database.pdf"
+            target="_blank">[Slides]</a> <a
+            href="download/posters/IRIS_Achieving_Speed_and_Usability_in_an_Integrated_Vector_Database.pdf"
+            target="_blank">[Poster]</a>
+          <br>Jeff Fried*; Dmitriy Bochkov*; David Van De Griek; Boya Song; Philip Miloslavsky; Yuchen Liu; Yiwen Huang; Mark Hanson<br>
+          <a href="javascript: toggleVisibility ('#pa2F')">Click to toggle abstract.</a>
+          <div id="pa2F" class="abstract" style="display: none;">
+            <p>
+              This paper introduces an advanced implementation of an integrated vector database grounded in a
+              ""Post-Relational"" architectural approach. The resulting system is inherently multi-model and achieves
+              superior scalability and performance metrics when compared to existing frameworks such as pgvector and
+              Faiss. By integrating diverse functionalities into a single cohesive platform, it effectively mitigates
+              data silos and lowers operational expenditures, thereby streamlining the overall data management
+              lifecycle. Additionally, the system is engineered to facilitate ease of use through an intuitive SQL-based
+              interface, coupled with comprehensive integration into the data engine. This design choice effectively
+              abstracts the underlying pipeline complexities from the user, ensuring optimal efficiency in both the
+              creation of embeddings and the retrieval process, thus broadening accessibility to sophisticated vector
+              data operations without detracting from performance or scalability.
+            </p>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+
+      <tr>
+        <td>12:15 - 1:15</td>
+        <td><strong>Lunch Break</strong></td>
+      </tr>
+
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+
+      <tr class="success">
+        <td colspan="2" align="center"><strong>Session 3: Potpourri (From Data Cleaning to Performance
+            Benchmarking)</strong><br>Chair: Tarikul Islam Papon (Boston University)</td>
+      </tr>
+
+      <tr>
+        <td>1:15 - 1:30</td>
+        <td>
+          <i>Distributed Speculative Execution for Resilient Cloud Applications</i>
+          <!-- <a href="download/slides/Sawmill_From_Logs_to_Causal_Diagnosis_of_Large_Systems_MarkosMarkakis.pdf"
+            target="_blank">[Slides]</a> <a
+            href="download/posters/Sawmill_From_Logs_to_Causal_Diagnosis_of_Large_Systems.pdf"
+            target="_blank">[Poster]</a> -->
+          <br>
+          Tianyu Li (MIT CSAIL)*; Badrish Chandramouli (Microsoft Research); Philip Bernstein (Microsoft Research);
+          Samuel Madden (MIT CSAIL)
+          <br>
+          <a href="javascript: toggleVisibility ('#pa2K')">Click to toggle abstract.</a>
+          <div id="pa2K" class="abstract" style="display: none;">
+            <p>
+              Fault-tolerance is critically important in highly-distributed modern cloud applications. Solutions such as
+              Temporal, Azure Durable Functions, and Beldi hide fault-tolerance complexity from developers by persisting
+              execution state and resuming seamlessly from persisted state after failure. This pattern, often called
+              durable execution, usually forces frequent and synchronous persistence and results in hefty latency
+              overheads. In this paper, we propose distributed speculative execution (DSE), a technique for implementing
+              the durable execution abstraction without incurring this penalty. With DSE, developers write code assuming
+              synchronous persistence, and a DSE runtime is responsible for transparently bypassing persistence and
+              reactively repairing application state on failure. We present libDSE, the first DSE application framework
+              that achieves this vision. The key tension in designing libDSE is between imposing restrictions on user
+              programs so the framework can safely and transparently change execution behavior, and avoiding assumptions
+              so libDSE can support more use cases. We address this with a novel programming model centered around
+              message-passing, atomic code blocks, and lightweight threads, and show that it allows developers to build
+              a variety of speculative services, including write-ahead logs, key-value stores, event brokers, and
+              fault-tolerant workflows. Our evaluation shows that libDSE reduces end-to-end latency by up to an order of
+              magnitude compared to current generations of durable execution systems with minimal run- time overhead and
+              manageable complexity.
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>1:30 - 1:45</td>
+        <td>
+          <i>PBench: A Workload Synthesizer for Realistic Benchmarking in Cloud Analytics</i>
+          <!-- <a href="download/slides/StarfishDB_Probabilistic_Programming_Datalog in_Action_NiccoloMeneghetti.pdf"
+            target="_blank">[Slides]</a> -->
+          <!--a href="download/posters/StarfishDB_Probabilistic_Programming_Datalog in_Action.pdf" target="_blank">[Poster]</a-->
+          <br>
+          Chunwei Liu (MIT)*; Samual Madden (MIT CSAIL); Tim Kraska (MIT CSAIL)
+          <br>
+          <a href="javascript: toggleVisibility ('#pa3C')">Click to toggle abstract.</a>
+          <div id="pa3C" class="abstract" style="display: none;">
+            <p>
+              Cloud database vendors usually leverage standard benchmarks to evaluate and optimize the performance of
+              cloud data analytic systems. However, traditional benchmarks cannot effectively simulate the realistic,
+              complex, and fluctuating cloud workloads. Due to privacy requirements, it is also impossible to directly
+              replay users' real workloads. To facilitate the development of cloud database research with realistic
+              workload characteristics, several cloud vendors including Snowflake and Amazon Web Service (AWS) have
+              recently released the customers' workload traces that contain real statistics and performance metrics.
+              Unfortunately, the real SQL workloads have not been publicly released.
+
+              To bridge the gap between traditional benchmarks and realistic workloads, we propose a novel workload
+              synthesizer, named Performance-aware cloud analytics Benchmarking (PBench), that can generate workloads
+              from the real statistics for cloud analytics benchmarking. Particularly, we study the problem of
+              leveraging standard benchmarks to synthesize workloads with similar characteristics to the real workloads,
+              addressing the issues of privacy and fidelity of benchmarking simultaneously. To this end, we formulate
+              the problem as an optimization problem and propose a two-phase framework to synthesize the workload with
+              real statistics. In the first phase, we employ an integer linear programming-based approach for selecting
+              the candidate query set in a coarse granularity. In the second phase, we propose a fine-grained query
+              ranking method to enable an accurate fitting in the second level. Additionally, we incorporate
+              LLM-enhanced query generation to diversify the candidate query set and develop a database switch method to
+              improve the efficacy of testing data. We evaluate PBench over two realistic workloads, Snowset and Redset.
+              The experimental results demonstrate our method outperforms two baselines (i.e., CAB and Stitcher) in
+              terms of efficiency and effectiveness.
+            </p>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>1:45 - 2:00</td>
+        <td>
+          <i>Improving DBMS Scheduling Decisions with Fine-grained Performance Prediction on Concurrent Queries</i>
+          <!-- <a href="download/slides/DataVersioning_RoeeShraga.pdf"
+            target="_blank">[Slides]</a> -->
+          <br>
+          Ziniu Wu (Massachusetts Institute of Technology)*
+          <br>
+          <a href="javascript: toggleVisibility ('#pa2H')">Click to toggle abstract.</a>
+          <div id="pa2H" class="abstract" style="display: none;">
+            <p>
+              Query scheduling is a critical task that directly impacts query performance in database management systems
+              (DBMS). Deeply integrated schedulers, which require changes to DBMS internals, are usually customized for
+              a specific engine and can take months to implement. In contrast, non-intrusive schedulers make
+              coarse-grained decisions, such as controlling query admission and re-ordering query execution, without
+              requiring modifications to DBMS internals. They require much less engineering effort and can be applied
+              across a wide range of DBMS engines, offering immediate benefits to end users. However, most existing
+              non-intrusive scheduling systems rely on simplified cost models and heuristics that cannot accurately
+              model query interactions under concurrency and different system states, possibly leading to suboptimal
+              scheduling decisions.
+              This work introduces IconqSched, a new, principled non-intrusive scheduler that optimizes the execution
+              order and timing of queries to enhance total end-to-end runtime as experienced by the user— query queuing
+              time plus system runtime. Unlike previous approaches, IconqSched features a novel fine-grained predictor,
+              Iconq, which treats the DBMS as a black box and accurately estimates the system runtime of concurrently
+              executed queries under different system states. Using these predictions, IconqSched is able to capture
+              system runtime variations across different query mixes and system loads. It then employs a greedy
+              scheduling algorithm to effectively determine which queries to submit and when to submit them. We compare
+              IconqSched to other schedulers in terms of end-to-end runtime using real workload traces. . On Postgres,
+              IconqSched reduces end-to-end runtime by 16.2%-28.2% on average and 33.6%-38.9% in the tail. Similarly, on
+              Redshift, it reduces end-to-end runtime by 10.3%-18.4% on average and 14.9%-27.6% in the tail.
+            </p>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>2:00 - 2:15</td>
+        <td>
+          <i>Cleaning Huge Anomaly-Polluted Log Data Sets Using Sample Selection</i>
+          <a href="download/slides/Pluto_NEDB_slides.pdf" target="_blank">[Slides]</a>
+          <a href="download/posters/pluto_24x36_poster.pdf" target="_blank">[Poster]</a>
+          <br>
+          Lei Ma (WPI)*; Lei Cao (University of Arizona); Peter VanNostrand (Worcester Polytechnique Institute); Dennis
+          Hofmann (Worcester Polytechnique Institute); Yao Su (Worcester Polytechnique Institute); Elke Rundensteiner
+          (Worcester Polytechnique Institute)
+          <br>
+          <a href="javascript: toggleVisibility ('#pa2I')">Click to toggle abstract.</a>
+          <div id="pa2I" class="abstract" style="display: none;">
+            <p>
+              Current log anomaly detection methods rely on deep learning models trained on clean anomaly-free data,
+              which requires costly manual labeling. To address this, given a polluted (unlabeled with anomalies) log
+              sequence dataset, we propose Pluto, a robust framework that selects a clean subset from polluted log data
+              to train a Transformer-based anomaly detection model. By utilizing the embedding space, Pluto effectively
+              identifies clean (normal) samples, even when faced with challenges like uneven anomaly distribution and
+              the presence of subtle or concentrated anomalies. This talk is based on the paper "Pluto: Sample Selection
+              for Robust Anomaly Detection on Polluted Log Data" accepted at SIGMOD 25.
+            </p>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+
+      <tr>
+        <td>2:15 - 2:45</td>
+        <td><strong>Coffee Break</strong></td>
+      </tr>
+
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+
+
+
+      <tr class="success">
+        <td colspan="2" align="center"><strong>Session 4: Evolutionary Databases</strong><br>Chair: Sanket Purandare
+          (Harvard University)</td>
+      </tr>
+
+      <tr>
+        <td>2:45 - 3:15</td>
+        <td>
+          <strong>Keynote 3</strong>: Michael Stonebraker (MIT) <br><i>DBOS: A Database-oriented Operating System </i>
+          <!-- <a href="download/slides/Novel_Applications_for_Large_Language_Models_in_Data_Management_ImmanuelTrummer.pdf"
+            target="_blank">[Slides]</a> -->
+          <br>
+          <a href="javascript: toggleVisibility ('#keynote4A')">Click to toggle abstract and bio.</a>
+          <div id="keynote4A" class="abstract" style="display: none;">
+            <h3>Abstract</h3>
+            <p>
+              There are three major developments that indicate the traditional way of building data-oriented
+              applications
+              can be improved substantially. First, the aggressive movement of applications to the cloud is being done
+              by
+              all enterprises who can. Pricing by the cloud vendors dramatically favors a workflow paradigm, not the
+              traditional client-server model. Second, domain-specific languages, long popular for business data
+              processing applications, must be changed to work well for a workflow paradigm. This presents an
+              opportunity
+              for new domain specific languages (DSPs). Lastly, the scale requirements of web applications is putting
+              extreme stress on Linux, again leading to the desirability of a new system software stack. This paper
+              shows
+              how the traditional development paradigm can be improved for data-oriented applications by leveraging
+              these
+              new features, thereby obtaining significantly reduced development time and cloud costs, simpler
+              administration and better security.
+            </p>
+            <h3>Bio</h3>
+            <p>
+              Dr. Stonebraker has been a pioneer of data base research and technology for more than forty years. He was
+              the main architect of the INGRES relational DBMS, and the object-relational DBMS, POSTGRES. These
+              prototypes
+              were developed at the University of California at Berkeley where Stonebraker was a Professor of Computer
+              Science for twenty-five years. More recently at M.I.T. he was the co-architect of the C-Store column-
+              oriented DBMS, the H-Store transaction processing engine, the Data Tamer data integration system, the
+              SciDB
+              array processing engine, the Kyrix visualization system and the operating system DBOS. He is the founder
+              of
+              ten venture-capital backed startups which have commercialized his prototypes.
+              Professor Stonebraker is the author of scores of research papers on data base technology, operating
+              systems
+              and the architecture of system software services. He was awarded the ACM System Software Award in 1992,
+              for
+              his work on INGRES. Additionally, he was awarded the first annual Innovation award by the ACM SIGMOD
+              special
+              interest group in 1994 and was elected to the National Academy of Engineering in 1997. He was awarded the
+              IEEE John Von Neumann award in 2005, and the ACM Turing Award in 2014. Presently he is an Adjunct
+              Professor
+              of Computer Science at M.I.T., where he is working on a variety of future-generation data-oriented
+              projects.
+            </p>
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>3:15 - 3:30</td>
+        <td>
+          <i>OLTP Through the Looking Glass 16 Years Later</i>
+          <a href="download/slides/OLTP_Through_the_Looking_Glass_16_Years_Later.pdf" target="_blank">[Slides]</a>
+          <a href="download/posters/OLTP_Through_the_Looking_Glass_16_Years_Later.pdf" target="_blank">[Poster]</a>
+          <br>
+          Xinjing Zhou (MIT)*; Viktor Leis (TUM); Xiangyao Yu (University of Wisconsin-Madison); Michael Stonebraker
+          (MIT)
+          <br>
+          <a href="javascript: toggleVisibility ('#pa3A')">Click to toggle abstract.</a>
+          <div id="pa3A" class="abstract" style="display: none;">
+            <p>
+              OLTP systems have significantly evolved since the 2008 study that identified CPU-bound tasks, such as
+              buffer pool and concurrency control, as primary bottlenecks. In this paper, we revisit these assumptions
+              and demonstrate that communication overhead is now the dominant factor affecting OLTP performance. Using
+              comprehensive whole-stack benchmarks on modern hardware, we analyze both stored procedure and client-side
+              transaction models, revealing that messaging costs play a critical role in end-to-end performance.
+              Additionally, we explore user-defined code isolation, an often-overlooked aspect that poses security
+              risks, especially in multi-tenant database systems.
+              We find that increased isolation can lead to higher communication costs, highlighting the need for new
+              strategies to mitigate these overheads.
+            </p>
+          </div>
+        </td>
+      </tr>
+
+
+
+
+      <tr>
+        <td>3:30 - 3:45</td>
+        <td>
+          <i>Let’s Question Rankings!</i>
+          <!-- <a
+            href="download/slides/Specialized_vs_Generalized_Vector_Databases_JianguoWang.pdf"
+            target="_blank">[Slides]</a> -->
+          <br>
+          Zixuan Chen (Northeastern University)*; Panagiotis Manolios (Northeastern University); Mirek Riedewald
+          (Northeastern University)
+          <br>
+          <a href="javascript: toggleVisibility ('#pa3D')">Click to toggle abstract.</a>
+          <div id="pa3D" class="abstract" style="display: none;">
+            <p>
+              This talk will present highlights of our work on understanding and explaining rankings and top-𝑘 query
+              results. It is based on our VLDB 2023 paper and recent extensions . We study questions like: Given a
+              ranking, what is the most accurate and “sufficiently simple” explanation of how it was obtained? Can we
+              efficiently synthesize the corresponding scoring functions for large datasets? And if the position of some
+              entity of interest is lower than expected, are there large classes of (reasonable) scoring functions that
+              place this entity “where it belongs?” What is a concise characterization of these classes? These questions
+              motivate interesting optimization problems, and their answers matter in the context of algorithmic
+              decision making and fairness.
+            </p>
+          </div>
+        </td>
+      </tr>
+
+
+
+
+      <tr>
+        <td>3:45 - 4:00</td>
+        <td>
+          <i>Mind the Data Gap: Bridging LLMs to Enterprise Data Integration</i>
+          <br>
+          Moe Kayali (University of Washington)*; Fabian Wenz (TU Munich and MIT); Peter Baile Chen (MIT); Nesime Tatbul
+          (Intel Labs and MIT); Çağatay Demiralp (AWS AI Labs and MIT); Michael Stonebraker (MIT CSAIL)
+          <!-- <a href="download/slides/Split-Parallel_Graph_Neural_Network_Training_SandeepPolisetty.pdf"
+            target="_blank">[Slides]</a> <a href="download/posters/Split-Parallel_Graph_Neural_Network_Training.pdf"
+            target="_blank">[Poster]</a> -->
+          <br>
+          <a href="javascript: toggleVisibility ('#pa2D')">Click to toggle abstract.</a>
+          <div id="pa2D" class="abstract" style="display: none;">
+            <p>
+              We propose a talk about the limitations of applying large-language models (LLMs) to enterprise data. We
+              focus on the data integration task. The talk will start by contrasting the reported state-of-the-art
+              results in academia with reports of poor performance from industry. To quantify this, we introduce a new
+              benchmark of enterprise data, which we call \textit{Goby}. This is a data integration benchmark composed
+              of real enterprise data from a corporate partner. We describe Goby and show that when applying LLM-based
+              data integration approaches from the literature on Goby, we measure a noticeable gap in performance
+              compared to public datasets. This validates the public-enterprise performance gap, hence the title of the
+              talk.
+
+              Next, we present candidate reasons for this performance gap, in particular differing data granularity, as
+              well as domain-specific jargon. We propose three technical mitigations: hierarchical annotation, runtime
+              class-learning, and ontology synthesis. We evaluate these approaches and show that they close a sizable
+              portion of the public-enterprise performance gap. Finally, we also discuss parallel efforts by the team in
+              this area, using query history to improve enterprise performance and developing an interactive annotation
+              system to accelerate enterprise benchmark creation.
+
+              This talk is based on a paper to appear at CIDR 2025. The Goby benchmark can be obtained at
+              https://goby-benchmark.github.io/
+            </p>
+          </div>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td>4:00 - 4:15</td>
+        <td>
+          <i>OSDB: Exposing the Operating System's Inner Database</i>
+          <!-- <a
+            href="download/slides/Specialized_vs_Generalized_Vector_Databases_JianguoWang.pdf"
+            target="_blank">[Slides]</a> -->
+          <br>
+          Stelios Kasouridis (Yale University)*; Robert Soulé (Yale University); George Neville-Neil (Yale University);
+          Alex Yuan (Yale University); Avi Silberschatz (Yale University); Peter Alvaro (UC Santa Cruz)
+          <br>
+          <a href="javascript: toggleVisibility ('#pa3Z')">Click to toggle abstract.</a>
+          <div id="pa3Z" class="abstract" style="display: none;">
+            <p>
+              Operating systems must provide functionality that closely resembles that of a data management system, but
+              existing query mechanisms are ad-hoc and idiosyncratic. To address this problem, we argue for the adoption
+              of a relational interface to the operating system kernel. While prior work has made similar proposals, our
+              approach is unique in that it allows for incremental adoption over an existing, production-ready operating
+              system. In this paper, we present progress on a prototype system called OSDB that embodies the incremental
+              approach and discuss key aspects of the design, including the data model and concurrency control
+              mechanisms. We present four example use cases: a network usage monitor, a load balancer, file system
+              checker, and network debugging session, as well as experiments that demonstrate the low overhead for our
+              approach.
+            </p>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+
+      <tr>
+        <td>4:15 - 4:45</td>
+        <td><strong>Coffee Break & Poster Preparation</strong></td>
+      </tr>
+
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+
+      <tr class="success">
+        <td>4:45 - 6:15</td>
+        <td>
+          <i><strong><a href="#posters">Poster Session (location: Lurias and Levin Ross  conference room)</a></strong></i>
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+
+      <tr class="success">
+        <td>6:15 - 8:00</td>
+        <td>
+          <i><strong>Student Pizza Networking Session (location: Feldberg Lounge)</strong></i>
+        </td>
+        </tr-->
+
+        <!--
+      <tr>
+        <td>6.00-7.30</td>
+        <td>
+  <i>Event Name (CCDS 1750) </i>
+
+        </td>
+      </tr>
+-->
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr class="success">
+        <td colspan="2" align="center"><strong>End Of Official Program</strong></td>
+      </tr>
+
+
+    </tbody>
+  </table>
+
+</div>
